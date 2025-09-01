@@ -1,0 +1,106 @@
+.petshops-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #fdfdfd;
+  height: 100%;
+  min-height: 100vh;
+  margin-top: 60px;
+  /* optional: adjust if your navbar is fixed */
+}
+
+.top-section {
+  background-color: #3e0061;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1000;
+}
+
+.top-section select,
+.top-section input,
+.top-section button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+}
+
+.top-section input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.top-section button {
+  background-color: #ffb400;
+  color: #3e0061;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.content-section {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  height: calc(100vh - 120px);
+  /* Adjust based on actual navbar + top-section height */
+  overflow: hidden;
+}
+
+.map-container {
+  flex: 1;
+  height: 100%;
+}
+
+.details-panel {
+  width: 35%;
+  background-color: #f9f7fb;
+  padding: 1rem;
+  overflow-y: auto;
+  border-left: 2px solid #3e0061;
+}
+
+.details-panel h2 {
+  color: #3e0061;
+  margin-bottom: 0.5rem;
+}
+
+.details-panel p {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.result-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-left: 5px solid #ffb400;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(62, 0, 97, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.result-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(62, 0, 97, 0.2);
+}
+
+.result-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #3e0061;
+}
+
+.result-card p {
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+.result-card p span {
+  font-weight: bold;
+  color: #3e0061;
+}

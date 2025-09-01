@@ -1,0 +1,47 @@
+/* src/App.css */
+@import "leaflet/dist/leaflet.css";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Only the signup page will have yellow background */
+.signup-container {
+  background-color: #ffd500;
+  color: #4B0082;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.section {
+  height: 100vh;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro {
+  background: #fff9e6;
+  color: #5c2d91;
+}
+
+.features {
+  background: #f0e6ff;
+  color: #333;
+}
+
+.places {
+  background: #ffffcc;
+  color: #333;
+}
+
+.contact {
+  background: #f6f6f6;
+  color: #333;
+}
+/* Add bottom padding so content isn't hidden behind navbar */
+.section {
+  padding-bottom: 5rem;
+}

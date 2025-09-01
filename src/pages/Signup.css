@@ -1,0 +1,76 @@
+.signup-page {
+    min-height: 100vh;
+    background-color: #4B0082;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.signup-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #FFF1B8;
+    border: 1px solid #FFD700;
+    border-radius: 10px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    color: #4B0082;
+}
+
+.signup-dog-img {
+    width: 100px;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4B0082;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #FFD700;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #4B0082;
+    color: #FFF9DB;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #36006d;
+}
+
+.error-text {
+    color: red;
+    font-size: 12px;
+}
+
+.success-text {
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+}
