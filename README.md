@@ -35,8 +35,7 @@
 
 ## Tech Stack
 
-**Backend**: Node.js, Express, MongoDB, JWT, QRCode  
+**Backend**: Node.js, Express, MongoDB
 **Frontend**: React, React Router, Axios, CSS3  
-**Colors**: Purple (#3e0061) and Yellow (#ffb400)
 
 
