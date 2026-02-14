@@ -35,7 +35,7 @@
 
 ## Tech Stack
 
-**Backend**: Node.js, Express, MongoDB
+**Backend**: Node.js, Express, MongoDB 
 **Frontend**: React, React Router, Axios, CSS3  
 
 
