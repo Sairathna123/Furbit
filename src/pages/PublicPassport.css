@@ -1,0 +1,524 @@
+/* Public Passport View - Clean & Professional */
+.public-passport {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--light-bg, #f5f5f5);
+  min-height: 100vh;
+}
+
+.passport-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Controls */
+.passport-header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Download PDF Button */
+.download-pdf-btn {
+  background: linear-gradient(135deg, #e6b800 0%, #f0c800 100%);
+  color: #2c1810;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(230, 184, 0, 0.3);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.download-pdf-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 184, 0, 0.4);
+}
+
+.download-pdf-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.download-pdf-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading & Error States */
+.loading-state,
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #4a1a72;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+/* Passport Badge */
+.passport-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #4a1a72 0%, #5c2d91 100%);
+  color: var(--white, white);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(62, 0, 97, 0.2);
+}
+
+.read-only-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Identity Card */
+.identity-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.pet-photo-section {
+  flex-shrink: 0;
+}
+
+.pet-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-yellow, #ffb400);
+  box-shadow: 0 2px 8px rgba(255, 180, 0, 0.3);
+}
+
+.photo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-yellow, #ffb400), var(--secondary-yellow, #ffd500));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  box-shadow: 0 2px 8px rgba(255, 180, 0, 0.3);
+}
+
+.pet-info-section {
+  flex: 1;
+}
+
+.pet-name {
+  margin: 0 0 0.5rem 0;
+  color: #3e0061;
+  font-size: 2rem;
+}
+
+.pet-species {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+}
+
+.passport-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.passport-id-display {
+  font-family: monospace;
+  background: #f0f0f0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #333;
+  display: inline-block;
+  width: fit-content;
+}
+
+.last-updated {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* Vaccinations Display */
+.vaccinations-display {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.vaccinations-display h2 {
+  color: #3e0061;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+}
+
+.vaccination-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vaccination-item {
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.vaccination-item.current {
+  border-color: #4caf50;
+  background: #f1f8f4;
+}
+
+.vaccination-item.soon {
+  border-color: #ffc107;
+  background: #fffbf0;
+}
+
+.vaccination-item.due-today {
+  border-color: #ff9800;
+  background: #fff8f0;
+}
+
+.vaccination-item.overdue {
+  border-color: #dc3545;
+  background: #fff5f5;
+}
+
+.vaccine-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.vaccine-main h3 {
+  margin: 0;
+  color: #3e0061;
+  font-size: 1.2rem;
+}
+
+.status-indicator {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-indicator.current {
+  display: none !important;
+}
+
+.status-indicator.soon {
+  display: none !important;
+}
+
+.status-indicator.due-today {
+  display: none !important;
+}
+
+.status-indicator.overdue {
+  display: none !important;
+}
+
+.vaccine-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.vaccine-dates p {
+  margin: 0;
+}
+
+.vaccine-dates strong {
+  color: #333;
+}
+
+.vaccine-notes {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  padding: 2rem;
+}
+
+/* Trust Notice */
+.trust-notice {
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.trust-notice p {
+  margin: 0.5rem 0;
+  color: #2e7d32;
+}
+
+.disclaimer {
+  font-size: 0.85rem;
+  color: #555 !important;
+  margin-top: 1rem !important;
+}
+
+/* Footer */
+.furbit-footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.furbit-footer strong {
+  color: #3e0061;
+}
+
+/* Public Medical Sections */
+.public-medical-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #ffb400;
+}
+
+.public-medical-section h2 {
+  color: #3e0061;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.allergy-list-public {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.allergy-badge-public {
+  background: #ffb400;
+  color: #3e0061;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.public-condition-item,
+.public-surgery-item {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #5c1a8b;
+}
+
+.public-condition-item h4,
+.public-surgery-item h4 {
+  margin: 0 0 0.5rem 0;
+  color: #3e0061;
+  font-size: 1rem;
+}
+
+.public-condition-item p,
+.public-surgery-item p {
+  margin: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.public-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.public-info-grid p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.public-info-grid strong {
+  color: #3e0061;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .public-passport {
+    padding: 0.75rem;
+  }
+
+  .passport-content {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .passport-badge {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .identity-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .pet-photo,
+  .photo-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .passport-meta {
+    align-items: center;
+  }
+  
+  .pet-name {
+    font-size: 1.5rem;
+  }
+
+  .pet-species {
+    font-size: 1rem;
+  }
+
+  .vaccinations-display,
+  .public-medical-section {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .vaccinations-display h2,
+  .public-medical-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .vaccination-item {
+    padding: 1rem;
+  }
+  
+  .vaccine-main {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .vaccine-main h3 {
+    font-size: 1rem;
+  }
+
+  .vaccine-dates {
+    font-size: 0.9rem;
+  }
+
+  .public-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .allergy-list-public {
+    gap: 0.5rem;
+  }
+
+  .allergy-badge-public {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .trust-notice {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .furbit-footer {
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .public-passport {
+    padding: 0.5rem;
+  }
+
+  .passport-content {
+    padding: 0.75rem;
+  }
+
+  .identity-card {
+    padding: 1rem 0.75rem;
+  }
+
+  .pet-name {
+    font-size: 1.25rem;
+  }
+
+  .vaccinations-display,
+  .public-medical-section {
+    padding: 1rem;
+  }
+
+  .vaccination-item {
+    padding: 0.75rem;
+  }
+}

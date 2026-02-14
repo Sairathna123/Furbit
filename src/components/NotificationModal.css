@@ -1,0 +1,106 @@
+.notif-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.notif-modal {
+  background: #fff;
+  width: 95%;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(62, 0, 97, 0.25);
+  overflow: hidden;
+  animation: notif-pop 240ms ease-out;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #4a1a72 0%, #5c2d91 100%);
+  color: white;
+  padding: 1rem 1.25rem;
+}
+
+.notif-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.notif-close {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.notif-body {
+  padding: 1rem 1.25rem;
+}
+
+.notif-list {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1rem;
+  color: #333;
+  list-style: none;
+}
+
+.notif-list li {
+  background: #f9f5ff;
+  border: 1px solid #eadbf9;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem 0.7rem 2.2rem;
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.notif-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e6b800, #f0c800);
+  box-shadow: 0 0 0 3px rgba(240, 200, 0, 0.15);
+}
+
+.notif-actions {
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.notif-ok {
+  background: linear-gradient(135deg, #e6b800 0%, #f0c800 100%);
+  color: #3e0061;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.notif-secondary {
+  background: white;
+  color: #3e0061;
+  border: 1px solid #e6d97a;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes notif-pop {
+  from { transform: translateY(8px) scale(0.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}

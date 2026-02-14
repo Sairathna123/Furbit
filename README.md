@@ -1,65 +1,86 @@
-# Getting Started with Create React App
+# Furbit - Digital Pet Passport System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Furbit** is a digital pet passport that securely stores pet identity and medical history, proactively reminds owners about upcoming vaccinations, and allows instant read-only access via QR code anywhere.
 
-## Available Scripts
+## 🎯 Core Features
 
-In the project directory, you can run:
+- **Digital Pet Passport**: Store all pet information in one secure, digital place
+- **Vaccination Tracking**: Never miss a vaccine with automated reminders
+- **Smart Reminders**: Get notified 7 days before, 3 days before, due date, and when overdue
+- **QR Code Sharing**: Share read-only passport instantly with vets and pet services
+- **Medical History**: Track vaccinations, medications, and vet visits
 
-### `npm start`
+## 🔁 System Workflows
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Owner Workflow
+1. Register/Login
+2. Create digital pet passport
+3. Add pet details (name, species, breed, photo, vet info)
+4. Add vaccination records with due dates
+5. View and manage passport
+6. Share via QR code
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Reminder System (Automated)
+- System scans vaccination records daily
+- Checks next due dates
+- Sends reminders at: 7 days before, 3 days before, due today, overdue
+- Owner updates vaccination after vet visit
+- System recalculates next due date
 
-### `npm test`
+### 3. Public Access Workflow
+- Vet/Pet Service scans QR code
+- Opens read-only public passport
+- Views pet identity and vaccination status
+- Cannot edit any information
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 Tech Stack
 
-### `npm run build`
+**Backend**: Node.js, Express, MongoDB, JWT, QRCode  
+**Frontend**: React, React Router, Axios, CSS3  
+**Colors**: Purple (#3e0061) and Yellow (#ffb400)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+```bash
+cd backend
+npm install
+# Create .env: MONGO_URI, JWT_SECRET, CLIENT_URL
+npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend
+```bash
+npm install
+# Create .env: REACT_APP_API_URL=http://localhost:5000
+npm start
+```
 
-### `npm run eject`
+## 📝 Key API Endpoints
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `GET /api/pets` - Get all user's pets
+- `GET /api/pets/passport/:passportId` - Public read-only passport
+- `POST /api/pets` - Create passport (auto-generates QR)
+- `POST /api/pets/:id/vaccinations` - Add vaccination
+- `GET /api/pets/:id/reminders` - Get active reminders
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔔 Reminder System
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Run reminder service manually:
+```javascript
+const { runReminderService } = require('./services/reminderService');
+await runReminderService();
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Recommended: Set up daily cron job
 
-## Learn More
+## 📄 License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+MIT License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Built with ❤️ for pet owners worldwide**
 
 ### Deployment
 
